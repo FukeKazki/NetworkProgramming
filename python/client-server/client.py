@@ -20,5 +20,11 @@ data = sock.recv(BUFSIZE)
 
 print(data.decode("UTF-8"))
 
+msg = input('message: ')
+try:
+    sock.sendall(msg.encode('UTF-8'))
+except:
+    print('sendall function failed.')
+    
 # ソケットを閉じる
 sock.close()
